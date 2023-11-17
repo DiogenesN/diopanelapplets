@@ -1,0 +1,84 @@
+#!/bin/sh
+set -e
+
+if which pkgconf > /dev/null; then
+    echo "pkg-config found."
+else
+    echo "Error: 'pkgconf' not found. Please install the library."
+    exit 1
+fi
+if pkg-config --exists gtk4; then
+    echo "gtk-4.0 found."
+else
+    echo "Error: 'libgtk-4-dev' not found. Please install the library."
+    exit 1
+fi
+
+if pkg-config --exists glib-2.0; then
+    echo "glib-2.0 found."
+else
+    echo "Error: 'libglib2.0-dev' not found. Please install the library."
+    exit 1
+fi
+
+if pkg-config --exists pango; then
+    echo "pango found."
+else
+    echo "Error: 'pango' not found. Please install the library."
+    exit 1
+fi
+
+if which make > /dev/null; then
+    echo "make found."
+else
+    echo "Error: 'make' not found. Please install the library."
+    exit 1
+fi
+
+if which sed > /dev/null; then
+    echo "sed found."
+else
+    echo "Error: 'sed' not found. Please install the library."
+    exit 1
+fi
+
+if which gawk > /dev/null; then
+    echo "gawk found."
+else
+    echo "Error: 'gawk' not found. Please install the library."
+    exit 1
+fi
+
+if which nmcli > /dev/null; then
+    echo "network-manager found."
+else
+    echo "Error: 'network-manager' not found. Please install the library."
+    exit 1
+fi
+
+if which pactl > /dev/null; then
+    echo "pulseaudio-utils found."
+else
+    echo "Error: 'pulseaudio-utils' not found. Please install the library."
+    exit 1
+fi
+
+if which xrandr > /dev/null; then
+    echo "x11-xserver-utils found."
+else
+    echo "Error: 'x11-xserver-utils' not found. Please install the library."
+    exit 1
+fi
+
+if which setxkbmap > /dev/null; then
+    echo "x11-xkb-utils found."
+else
+    echo "Error: 'x11-xkb-utils' not found. Please install the library."
+    exit 1
+fi
+
+cp Makefile.in Makefile
+
+echo "\nAll done! \n\nType 'make' to build the project."
+
+exit 0
