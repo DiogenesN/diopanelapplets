@@ -40,6 +40,10 @@ It was tested on Debian 12.
 
 ![Alt text](https://github.com/DiogenesN/diopanelapplets/blob/main/diopanelapplets-network.png)
 
+# BUGS
+
+When you connect to internet and type in your password, no issues if you enter the correct password, but if you enter a wrong password then the application might freeze, to fix it you need to open: nm-connection-editor, remove your network name from the saved networks in 'Wi-Fi section, disable and re-enable Wifi and connect again.
+
 That's it!
 
  Make sure you have the following packages installed:
